@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <svg height="50" width="50" id="crcl" stroke-width="1" stroke="black" onmousedown="changeEffect(event)" onmouseover="changeEffect(event)" onclick="changeEffect(event)" onmouseout="changeEffect(event)">
+        <circle cx="27"cy="27" r="22" stroke="grey" stroke-width="1" fill="grey" id="style1"></circle>
+        <circle cx="27"cy="27" r="22" stroke="lime" stroke-width="1" fill="lime" display = "none" id="style2"></circle>
+        <circle cx="27"cy="27" r="22" stroke="green" stroke-width="1" fill="green" display = "none" id="style3"></circle>
+    </svg>
+
+    <script>
+        function changeEffect(ev){
+            if(ev.type == "mouseover"){
+                document.getElementById("style1").style.display = "none";
+                document.getElementById("style3").style.display = "none";
+                document.getElementById("style2").style.display = "block";
+            }else if(ev.type == "mousedown"){
+                document.getElementById("style1").style.display = "none";
+                document.getElementById("style2").style.display = "none";
+                document.getElementById("style3").style.display = "block";
+            }else if(ev.type == "click"){
+                alert("You have clicked me!!");
+            }else if(ev.type == "mouseout"){
+                document.getElementById("style1").style.display = "block";
+                document.getElementById("style2").style.display = "none";
+                document.getElementById("style3").style.display = "none";
+            }
+        }
+    </script>
+
+
+</body>
+</html>

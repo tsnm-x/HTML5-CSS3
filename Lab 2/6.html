@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <svg height="300" width="300">
+        <circle cx="150" cy="150" r="140" fill="yellow" id="bgr" onmouseout="changeBackground(event)" onmouseover="changeBackground(event)"></circle>
+        <ellipse cx="110" cy="70" rx="10" ry="20" fill="black" id="leye" onmouseout="changeBackground(event)" onmouseover="changeBackground(event)"></ellipse>
+        <ellipse cx="180" cy="70" rx="10" ry="20" fill="black" id="reye" onmouseover="changeBackground(event)" onmouseout="changeBackground(event)"></ellipse>
+        <ellipse cx="150" cy="190" rx="70" ry="40" fill="black" id="mth" onmouseout="changeBackground(event)" onmouseover="changeBackground(event)"></ellipse>
+        <ellipse cx="150" cy="180" rx="70" ry="40"fill="yellow" id="fll" onmouseover="changeBackground(event)" onmouseout="changeBackground(event)"></ellipse>
+    </svg>
+
+    <script>
+        function changeBackground(ev){
+            if(ev.target.id == "bgr"){
+                if(ev.type == "mouseover"){
+                    document.getElementById("fll").style.fill = "brown";
+                    ev.target.style.fill = "brown";
+                } else {
+                    document.getElementById("fll").style.fill = "yellow";
+                    ev.target.style.fill = "yellow";
+                }
+            } else if(ev.target.id == "leye" || ev.target.id == "reye"){
+                if(ev.type == "mouseover"){
+                    document.getElementById("leye").style.fill = "brown";
+                    document.getElementById("reye").style.fill = "brown";
+                } else{
+                    document.getElementById("leye").style.fill = "black";
+                    document.getElementById("reye").style.fill = "black";
+                }
+
+            } else if(ev.target.id == "mth"){
+                if(ev.type == "mouseover"){
+                    ev.target.style.fill = "brown";
+                } else{
+                    ev.target.style.fill = "black";
+                }
+            }
+
+        }
+    </script>
+    
+</body>
+</html>

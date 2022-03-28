@@ -1,0 +1,46 @@
+<html>
+    <head>
+        <title>University</title>
+    </head>
+    <body>
+        <div>
+            <img src="1.jpg" height="100" width="100">
+            <h1>University</h1>
+        </div>
+        <div">
+            <a href="#">Presentation</a>
+            <div>
+                <div id="dropbtn" onmouseover="showElems()"><a href="#">Studies</a>
+                  </div>
+                  <div id="dropmn" style="display: none;"  onclick="hideElems()">
+                    <div><a href="social-science.html">Social Science</a></div>
+                    <div><a href="engineering.html">Engineering</a></div>
+                  </div>
+            </div>
+            <a href="#">Staff</a>
+        </div>
+        <div>
+            <div>
+                <h3>News</h3>
+                <div>blah blah blah</div>
+            </div>
+            <div>
+                <h3>Annoncements</h3>
+                <div>blah blah blah</div>
+            </div>
+        </div>
+        <div>
+            <a href="#">Contact Us</a>
+            <p><small><span>&#169;</span> 2021 ITI. All rights reversed</small></p>
+        </div>
+        
+        <script>
+            function showElems(){
+                document.getElementById("dropmn").style.display = "block";
+            }
+            function hideElems(){
+                document.getElementById("dropmn").style.display = "none";
+            }
+        </script>
+    </body>
+</html>

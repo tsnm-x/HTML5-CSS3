@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body onload="drawCanvas()">
+    <canvas id="myCanvas" onmousedown="changeImage(event)" onmouseup="changeImage(event)" height="300" width="300"></canvas>
+    <img src="sad.png" style="display: none;" id="1" alt="">
+
+    <script>
+        var img = document.getElementById("1");
+        var canvas = document.getElementById("myCanvas");
+        var contxt = canvas.getContext("2d");
+        function drawCanvas(){
+            contxt.drawImage(img,0,0);
+
+        }
+        function changeImage(ev){
+            if(ev.type == "mousedown"){
+                canvas.width = 700;
+                canvas.height = 700;
+                img.src = "smiley.png";
+                img.onload = function(){
+                    contxt.drawImage(img,0,0,600,300);
+                }
+                
+
+            } else{
+                canvas.width = 700;
+                canvas.height = 700;
+                img.src = "sad.png";
+                img.onload = function(){
+                    contxt.drawImage(img,0,0);
+                }
+            }
+        }
+    </script>
+    
+</body>
+</html>

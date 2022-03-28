@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <svg height="400" width="150" id="lights">
+        <rect height="300" width="100" fill="grey" id="rec" onclick="changeColor()"></rect>
+        <circle cx="50" cy="50" r="40" fill="red" id="cir1"></circle>
+        <circle cx="50" cy="150" r="40" fill="yellow" id="cir2"></circle>
+        <circle cx="50" cy="250" r="40" fill="green" id="cir3"></circle>
+    </svg>
+    
+    <script>
+        function changeColor(){
+            document.getElementById(`cir1`).style.fill = "red";
+            document.getElementById(`cir2`).style.fill = "yellow";
+            document.getElementById(`cir3`).style.fill = "green";
+            setInterval(function(){
+                for(var i =1 ; i<=3; i++){
+                    switch(document.getElementById(`cir${i}`).style.fill){
+                    case "red": 
+                        document.getElementById(`cir${i}`).style.fill = "green";
+                        break;
+                    case "green": 
+                        document.getElementById(`cir${i}`).style.fill = "yellow";
+                        break;
+                    case "yellow": 
+                        document.getElementById(`cir${i}`).style.fill = "red";
+                        break;
+                }
+                }
+                
+            }, 500)
+        }
+    </script>
+</body>
+</html>

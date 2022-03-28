@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <svg height="300" width="300">
+        <line x1="0" y1="0" x2="0" y2="0" style="stroke: black; stroke-width:1;" id="ln"></line>
+    </svg>
+    <button onclick="makeLine()">Create line</button>
+
+    <script>
+        function makeLine(){
+            var timerId = setInterval(function(){
+                if(document.getElementById("ln").x2.baseVal.value == 200 && document.getElementById("ln").y2.baseVal.value == 200 ){
+                    alert("your line is completed");
+                    clearInterval(timerId);
+                } else{
+                    document.getElementById("ln").x2.baseVal.value+=10;
+                    document.getElementById("ln").y2.baseVal.value+=10;
+                    
+                }
+            }, 100)
+        }
+    </script>
+</body>
+</html>

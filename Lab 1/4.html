@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+        <script>
+        function drag(ev){
+            ev.dataTransfer.setData("image", ev.target.id);
+        }
+        function allowDrag(ev){
+            ev.preventDefault();
+        }
+        function dropElem(ev){
+            ev.preventDefault();
+            var img = ev.dataTransfer.getData("image");
+            if(ev.target == document.body){
+                document.getElementById("div2").appendChild(document.getElementById("img1"));
+                document.getElementById("div1").removeChild(document.getElementById("img1"));
+            } else {
+                ev.target.appendChild(document.getElementById("img1"));
+            }
+            
+
+        }
+    </script>
+</head>
+<body ondrop="dropElem(event)" ondragover="allowDrag(event)">
+    <div id="div1" style="border: solid 2px brown;background-color: aqua; height:100px; width: 100px ;" ondrop="dropElem(event)" ondragover="allowDrag(event)"></div>
+    <div id="div2"><img src="1.png" height= "50" width="50" draggable="true" id="img1" ondragstart="drag(event)"></div>
+
+</body>
+</html>

@@ -1,0 +1,60 @@
+<html>
+    <head>
+        <style>
+            img{
+                border-radius: 40px;
+                width: 80px;
+                height: 80px;
+                float: left;
+            }
+            #div1{
+                color: white;
+                border-radius: 0px 10px 10px 0px;
+                width: 150px;
+                height: 40px;
+                background-color: rgb(179, 177, 177);
+                text-align: center;
+                float: left;
+                margin-top: 20px;
+            }
+            #sp{
+                display: block;
+            }
+            @keyframes animation1 {
+                from {width: 150px;
+                }
+                to{width: 0px;
+                }
+            }
+            @keyframes animation2 {
+                from {width: 0px;
+                }
+                to{width: 150px;
+                }
+            }
+        </style>
+    </head>
+    <body>
+        <img src="avatar.png" onclick="restoreDiv()" alt="">
+        <div id="div1" ><span id="sp">Jane Row <span id="sp1" onclick="triggerAnim()">&#10060;</span></span></div>
+
+        <script>
+            function triggerAnim(){
+                var div = document.getElementById("div1");
+                div.style.animation = "animation1 2s ";
+                div.addEventListener("animationend", function(){
+                    document.getElementById("sp").style.display = "none";
+                    div.setAttribute("style","width:0px");
+                })
+            }
+            function restoreDiv(){
+                var div = document.getElementById("div1");
+                div.style.animation = "animation2 2s ";
+                div.addEventListener("animationend", function(){
+                    document.getElementById("sp").style.display = "block";
+                    div.setAttribute("style","width:150px");
+                })
+            }
+        </script>
+    </body>
+</html>

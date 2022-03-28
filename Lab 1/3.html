@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    
+</head>
+<body>
+    <div>
+        <button onclick="startDownload()">start download</button>
+    </div>
+
+    <script>
+        function startDownload(){
+            var div = document.getElementsByTagName("div")[0];
+            div.appendChild(document.createElement("PROGRESS"));
+            var prog = document.getElementsByTagName("progress")[0];
+            prog.value = 0;
+            prog.max = 100;
+            var fstInterval = setInterval(function(){
+                if(prog.value == 100){
+                    alert("Download is complete");
+                    clearInterval(fstInterval);
+
+
+                } else{
+                    prog.value+=10;
+                    if(prog.value >= 30 && prog.value < 60){
+                        prog.style.color = "green";
+                        console.log("hello");
+                    } else if(prog.value >= 60 && prog.value < 90){
+                        prog.style.color = "orange";
+                        console.log("hello");
+                    } else if (prog.value >= 90){
+                        prog.style.color = "red";
+                        console.log("hello");
+                    }
+                    
+                }
+            }, 1000);
+
+        }
+    </script>
+</body>
+</html>
